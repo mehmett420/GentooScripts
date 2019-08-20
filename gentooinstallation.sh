@@ -117,7 +117,7 @@ genkernel all
 sleep 4s
 
 #Networking information
-echo hostname='"mehmetozdemir"' > /etc/conf.d/hostname
+echo hostname='"User"' > /etc/conf.d/hostname
 
 #Configuring the network
 emerge --noreplace net-misc/netifrc
@@ -127,11 +127,11 @@ echo config_enp0s3='"dhcp"' > /etc/conf.d/net
 
 
 #The hosts file
-echo 127.0.0.1      mehmetozdemir.online mehmetozdemir > /etc/hosts
+echo 127.0.0.1      userdomain User > /etc/hosts
 echo ::1            localhost >> /etc/hosts
 
 # #System information
-echo 'root:asd123asd123' | chpasswd
+echo 'root:password' | chpasswd
 
 # #System logger
 emerge  app-admin/sysklogd
@@ -149,7 +149,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 #User administration
 useradd -m -G users,wheel,audio -s /bin/bash mehmetozdemir
-echo 'mehmetozdemir:mehmetozdemir123' | chpasswd
+echo 'User:Userpassword' | chpasswd
 END
 
 #Rebooting the system
